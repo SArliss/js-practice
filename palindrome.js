@@ -4,9 +4,11 @@
  * And turn everything lower case in order to check for palindromes.
 */
 
-isPalindrome = (string) => {
-  let s = string.toLowerCase().replace(/[^0-9a-z]/g, '');
-  for (let i = 0; i < s.length; i++) {
+// solution using a for loop
+isPalindrome = (str) => {
+  let s = str.toLowerCase().replace(/[^0-9a-z]/g, '');
+  // length/2 because we only need to check until half of the string
+  for (let i = 0; i < s.length / 2; i++) {
     if (s[i] !== s[(s.length - 1) - i]) {
       return false
     }
@@ -14,4 +16,14 @@ isPalindrome = (string) => {
   return true;
 }
 
-console.log(isPalindrome("han % #*n_a-H"));
+console.log(isPalindrome("Hannah2020"));
+
+// Now using split, reverse and join
+isPalindrome2 = (str) => {
+  // regex [\W_] is the same as [^0-9a-z]/g
+  var lowRegStr = str.toLowerCase().replace(/[\W_]/g, '');
+  var reverseStr = lowRegStr.split('').reverse().join('');
+  return reverseStr === lowRegStr;
+}
+
+console.log(isPalindrome2("A man, a plan, a canal. Panama"));
