@@ -39,6 +39,9 @@ reverseArrayInPlaceN = (arr, n) => {
   return arr;
 }
 
+// Using ES6:
+// [arr[arr.length — 1], arr[i]] = [arr[i], arr[arr.length — 1]]
+
 //console.log(reverseArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
 //console.log(reverseArray(["if", "never", "sometimes", "always", "maybe", "no", "yes"]));
 //console.log(reverseArray([5, 8, 2, 9, 5, 6, 3, 1]));
